@@ -1,0 +1,42 @@
+name: qr_alarm_clock
+description: A Flutter alarm clock app that requires scanning a specific QR code to dismiss.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Local key-value storage for alarms list
+  shared_preferences: ^2.2.2
+
+  # Industry-standard QR code scanning widget for iOS and Android
+  mobile_scanner: ^3.5.6
+
+  # Play alarm ringtones (loops the bundled alarm_sound.mp3 asset)
+  audioplayers: ^6.1.0
+
+  # Needed to wrap scheduled times for flutter_local_notifications
+  timezone: ^0.9.4
+
+  # Fullscreen intent and precisely-scheduled notifications for waking up the user
+  # (this alone replaces the old android_alarm_manager_plus dependency)
+  flutter_local_notifications: ^17.2.3
+
+  # Elegant state management
+  provider: ^6.1.1
+
+  # For generating/displaying the dismissal QR code inside the app (e.g. to print)
+  qr_flutter: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/alarm_sound.mp3
