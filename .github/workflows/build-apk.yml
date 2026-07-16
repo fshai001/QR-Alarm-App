@@ -40,12 +40,12 @@ jobs:
           cp android/app/src/main/AndroidManifest.xml \
              app/android/app/src/main/AndroidManifest.xml
 
-      - name: Ensure minSdk 21 (required by mobile_scanner)
+      - name: Ensure minSdk 23 (Flutter's own minimum supported version)
         run: |
           if [ -f app/android/app/build.gradle.kts ]; then
-            printf '\nandroid {\n    defaultConfig {\n        minSdk = 21\n    }\n}\n' >> app/android/app/build.gradle.kts
+            printf '\nandroid {\n    defaultConfig {\n        minSdk = 23\n    }\n}\n' >> app/android/app/build.gradle.kts
           elif [ -f app/android/app/build.gradle ]; then
-            printf '\nandroid {\n    defaultConfig {\n        minSdkVersion 21\n    }\n}\n' >> app/android/app/build.gradle
+            printf '\nandroid {\n    defaultConfig {\n        minSdkVersion 23\n    }\n}\n' >> app/android/app/build.gradle
           else
             echo "Could not find build.gradle or build.gradle.kts"
             exit 1
